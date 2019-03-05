@@ -3,11 +3,10 @@ node {
     checkout scm
   }
   stage('build') {
-      sh '''        
+      sh '''
+      git remote add azure https://junhyun.bae@jenkinstestapp2.scm.azurewebsites.net/JenkinsTestApp2.git
+      git push azure master
       '''
    }
-  stage('deploy') {
-    azureWebAppPublish azureCredentialsId: env.AZURE_CRED_ID,
-                       resourceGroup: env.RES_GROUP, appName: env.WEB_APP, filePath: "./index.php"
-  }
+  
 }
