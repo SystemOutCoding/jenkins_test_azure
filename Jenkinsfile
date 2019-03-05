@@ -4,8 +4,7 @@ node {
   }
   stage('build') {
       sh '''
-      git pull origin master
-      git commit -a -m ""
+      git pull origin master      
       git push azure master
       '''
    }  
