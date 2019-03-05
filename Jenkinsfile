@@ -5,7 +5,6 @@ node {
   stage('build') {
       sh '''
       git pull origin master      
-      git push azure master
       '''
    }
    stage('deploy') {
